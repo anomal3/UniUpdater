@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -31,6 +32,25 @@ namespace UniUpdate.CustomControls
         WebClient wc = new WebClient();
 
         Random random = new Random();
+
+        #endregion
+
+        #region Properties
+
+        public string SizeDownload
+        {
+            get
+            {
+                return _sizeDownload;
+            }
+            set
+            {
+                _sizeDownload = value;
+                lblSize.Text = value;
+            }
+        }
+
+        private string _sizeDownload;
 
         #endregion
 
@@ -72,6 +92,7 @@ namespace UniUpdate.CustomControls
 
         internal async void download()
         {
+            int i = 0;
             if (!string.IsNullOrWhiteSpace(urlBase))
                 downloadFiles = urlBase.Split('\n').ToList();
             else
@@ -86,14 +107,14 @@ namespace UniUpdate.CustomControls
             try
             {
 
-                label1.Invoke(new Action(() => label1.Text = downloadFiles[i]));
+               // label1.Invoke(new Action(() => label1.Text = downloadFiles[i]));
                 var Name = downloadFiles[i];
                 string _chk = Name.Substring(Name.LastIndexOf("/") + 1);
 
                 ServicePointManager.Expect100Continue = true;
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-                wc.DownloadFileAsync(new Uri(downloadFiles[i] + "?random=" + random.Next().ToString()), Environment.CurrentDirectory + @"/" + _chk);
+               // wc.DownloadFileAsync(new Uri(downloadFiles[i] + "?random=" + random.Next().ToString()), Environment.CurrentDirectory + @"/" + _chk);
 
                 wc.DownloadFileCompleted += (args, e1) =>
                 {
@@ -112,13 +133,13 @@ namespace UniUpdate.CustomControls
         void Downloader_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
 
-            lblSpeed.Invoke(new Action(() => lblSpeed.Text = string.Format("{0} kb/s", (e.BytesReceived / 1024 / sw.Elapsed.TotalSeconds).ToString("0.00"))));
-            progressBar1.Invoke(new Action(() => progressBar1.Value = e.ProgressPercentage));
-            lblPerc.Invoke(new Action(() => lblPerc.Text = e.ProgressPercentage.ToString() + "%"));
-
-            lblPerc.Invoke(new Action(() => lblDownload.Text = string.Format("{0} MB's / {1} MB's",
-                (e.BytesReceived / 1024d / 1024d).ToString("0.00"),
-                (e.TotalBytesToReceive / 1024d / 1024d).ToString("0.00"))));
+           // lblSpeed.Invoke(new Action(() => lblSpeed.Text = string.Format("{0} kb/s", (e.BytesReceived / 1024 / sw.Elapsed.TotalSeconds).ToString("0.00"))));
+           // progressBar1.Invoke(new Action(() => progressBar1.Value = e.ProgressPercentage));
+           // lblPerc.Invoke(new Action(() => lblPerc.Text = e.ProgressPercentage.ToString() + "%"));
+           //
+           // lblPerc.Invoke(new Action(() => lblDownload.Text = string.Format("{0} MB's / {1} MB's",
+           //     (e.BytesReceived / 1024d / 1024d).ToString("0.00"),
+           //     (e.TotalBytesToReceive / 1024d / 1024d).ToString("0.00"))));
 
         }
 
