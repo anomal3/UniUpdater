@@ -4,32 +4,63 @@
         <name>UniUpdate</name>
     </assembly>
     <members>
-        <member name="P:UniUpdate.CustomControls.frmDownload.TopMostWindow">
+        <member name="T:UniUpdate.CustomControls.Updater">
             <summary>
-            Окно загрузки поверх задач. Только если аргумент Start true
+            
             </summary>
         </member>
-        <member name="M:UniUpdate.CustomControls.frmDownload.Start(System.String[],System.Boolean)">
+        <member name="M:UniUpdate.CustomControls.Updater.#ctor">
+            <summary>
+            Экземпляр без аргуметов. 
+            </summary>
+        </member>
+        <member name="P:UniUpdate.CustomControls.Updater.TopMostWindow">
+            <summary>
+            Окно загрузки поверх других окон. Нужен только если выполняется в отдельном окне
+            </summary>
+        </member>
+        <member name="M:UniUpdate.CustomControls.Updater.Start(System.String[],System.Boolean)">
             <summary>
             Запуск скачивания. 
             </summary>
             <param name="args"></param>
+            <param name="WinForm"></param>
+            <param name="OneFile"></param>
         </member>
-        <member name="F:UniUpdate.CustomControls.frmDownload.components">
+        <member name="F:UniUpdate.CustomControls.Updater.components">
             <summary> 
             Обязательная переменная конструктора.
             </summary>
         </member>
-        <member name="M:UniUpdate.CustomControls.frmDownload.Dispose(System.Boolean)">
+        <member name="M:UniUpdate.CustomControls.Updater.Dispose(System.Boolean)">
             <summary> 
             Освободить все используемые ресурсы.
             </summary>
             <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         </member>
-        <member name="M:UniUpdate.CustomControls.frmDownload.InitializeComponent">
+        <member name="M:UniUpdate.CustomControls.Updater.InitializeComponent">
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="M:UniUpdate.SequentalDownload.OneUpdate.ExtractAsync(System.String,Ionic.Zip.ZipFile)">
+            <summary>
+            Extract handing
+            </summary>
+            <param name="path"></param>
+            <param name="zip"></param>
+        </member>
+        <member name="M:UniUpdate.SequentalDownload.OneUpdate.DownloadFile(System.String,System.String)">
+            <summary>
+            Download one Zip archive for update
+            </summary>
+            <param name="urlAddress">string URL</param>
+            <param name="location">Full filenanme</param>
+        </member>
+        <member name="M:Ionic.Zip.WinFormsSelfExtractorStubProgram.Main">
+            <summary>
+            The main entry point for the application.
             </summary>
         </member>
     </members>

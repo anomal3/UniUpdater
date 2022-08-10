@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UniUpdate.SequentalDownload;
 
 namespace UniUpdate.CustomControls
 {
@@ -78,6 +79,8 @@ namespace UniUpdate.CustomControls
         /// Запуск скачивания. 
         /// </summary>
         /// <param name="args"></param>
+        /// <param name="WinForm"></param>
+        /// <param name="OneFile"></param>
         public async void Start(string[] args, bool WinForm = false)
         {
             if (WinForm)
@@ -104,7 +107,6 @@ namespace UniUpdate.CustomControls
 
                     string InArgs = input.Substring(input.IndexOf('|') + 1).Replace(" ", "");
                     input = input.Substring(0, input.LastIndexOf('|'));
-
                     switch (input)
                     {
                         case "link":
@@ -113,25 +115,55 @@ namespace UniUpdate.CustomControls
                             {
                                 rootDownloadURL = urlBase.Split('\n').First();
                                 downloadFiles = urlBase.Split('\n').Skip(1).ToList();
+
+                                if (downloadFiles[0].StartsWith("one"))
+                                {
+                                    OneFileUpdate(downloadFiles[0].Substring(downloadFiles[0].IndexOf('|') + 1));
+                                    continue;
+                                }
+                                Thread th = new Thread(download);
+                                th.Start();
+
+                                
                             }
                             else
                             {
                                 MessageBox.Show("There is no argument to load.\r\nThe App will close!", "Error Arguments", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 ExitCode();
                             }
+
                             break;
+
                         case "FS":
                             fileStart = InArgs;
                             break;
+
+                        case "one":
+                            OneFileUpdate(InArgs);
+                            break;
                     }
                 }
-
-                Thread th = new Thread(download);
-                th.Start();
             }
             
         }
 
+
+        private async void OneFileUpdate(string InArgs)
+        {
+            OneUpdate oneUpdate = new OneUpdate();
+            oneUpdate.progressBar = prBar;
+            //oneUpdate.lblSpeed.Text = speedPerc;
+            oneUpdate.lblPerc = lblPersentage;
+            oneUpdate.lblTotal = lblSize;
+            oneUpdate.lblUpdate = lblFileProgress;
+            oneUpdate.DownloadFile(InArgs, Environment.CurrentDirectory + "\\update.zip");
+            lblFileProgress.Text = InArgs;
+            while (!oneUpdate.IsUpdate)
+                await Task.Delay(1000);
+
+            await Task.Delay(1000);
+            ExitCode();
+        }
 
         private void download()
         {

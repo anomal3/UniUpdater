@@ -29,17 +29,36 @@
         private void InitializeComponent()
         {
             this.prBar = new System.Windows.Forms.ProgressBar();
-            this.lblSize = new UniUpdate.CustomControls.TransparentLabel();
             this.lblPersentage = new System.Windows.Forms.Label();
             this.lblFileProgress = new System.Windows.Forms.Label();
+            this.lblSize = new UniUpdate.CustomControls.TransparentLabel();
             this.SuspendLayout();
             // 
             // prBar
             // 
             this.prBar.Location = new System.Drawing.Point(0, 8);
+            this.prBar.MarqueeAnimationSpeed = 10;
             this.prBar.Name = "prBar";
             this.prBar.Size = new System.Drawing.Size(820, 18);
             this.prBar.TabIndex = 0;
+            // 
+            // lblPersentage
+            // 
+            this.lblPersentage.Location = new System.Drawing.Point(652, 29);
+            this.lblPersentage.Name = "lblPersentage";
+            this.lblPersentage.Size = new System.Drawing.Size(165, 21);
+            this.lblPersentage.TabIndex = 2;
+            this.lblPersentage.Text = "Speed : 100 mbit/s | 100%";
+            this.lblPersentage.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblFileProgress
+            // 
+            this.lblFileProgress.AutoEllipsis = true;
+            this.lblFileProgress.Location = new System.Drawing.Point(3, 29);
+            this.lblFileProgress.Name = "lblFileProgress";
+            this.lblFileProgress.Size = new System.Drawing.Size(643, 20);
+            this.lblFileProgress.TabIndex = 3;
+            this.lblFileProgress.Text = "https://www.site.ru/download/s/100_103.patch";
             // 
             // lblSize
             // 
@@ -53,24 +72,7 @@
             this.lblSize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSize.TransparentBackColor = System.Drawing.Color.Transparent;
             // 
-            // lblPersentage
-            // 
-            this.lblPersentage.Location = new System.Drawing.Point(784, 29);
-            this.lblPersentage.Name = "lblPersentage";
-            this.lblPersentage.Size = new System.Drawing.Size(33, 21);
-            this.lblPersentage.TabIndex = 2;
-            this.lblPersentage.Text = "100%";
-            // 
-            // lblFileProgress
-            // 
-            this.lblFileProgress.AutoEllipsis = true;
-            this.lblFileProgress.Location = new System.Drawing.Point(3, 29);
-            this.lblFileProgress.Name = "lblFileProgress";
-            this.lblFileProgress.Size = new System.Drawing.Size(775, 20);
-            this.lblFileProgress.TabIndex = 3;
-            this.lblFileProgress.Text = "https://www.site.ru/download/s/100_103.patch";
-            // 
-            // frmDownload
+            // Updater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,7 +80,7 @@
             this.Controls.Add(this.lblPersentage);
             this.Controls.Add(this.lblSize);
             this.Controls.Add(this.prBar);
-            this.Name = "frmDownload";
+            this.Name = "Updater";
             this.Size = new System.Drawing.Size(820, 50);
             this.ResumeLayout(false);
 

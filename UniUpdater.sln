@@ -5,8 +5,6 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniUpdate", "UniUpdate\UniUpdate.csproj", "{886D17D5-76BF-4637-8937-8ED40B7D19AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDownload", "TestDownload\TestDownload.csproj", "{7222BD45-81C9-4CAC-BBCF-C7D7E40CF2C1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDownloadWF", "TestDownloadWF\TestDownloadWF.csproj", "{9CAB5C93-D556-46F0-B2C1-663E24714377}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{886D17D5-76BF-4637-8937-8ED40B7D19AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886D17D5-76BF-4637-8937-8ED40B7D19AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{886D17D5-76BF-4637-8937-8ED40B7D19AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7222BD45-81C9-4CAC-BBCF-C7D7E40CF2C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7222BD45-81C9-4CAC-BBCF-C7D7E40CF2C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7222BD45-81C9-4CAC-BBCF-C7D7E40CF2C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7222BD45-81C9-4CAC-BBCF-C7D7E40CF2C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9CAB5C93-D556-46F0-B2C1-663E24714377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9CAB5C93-D556-46F0-B2C1-663E24714377}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CAB5C93-D556-46F0-B2C1-663E24714377}.Release|Any CPU.ActiveCfg = Release|Any CPU

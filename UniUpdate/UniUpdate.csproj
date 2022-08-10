@@ -15,7 +15,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>embedded</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Build\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -54,14 +54,81 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SequentalDownload\OneUpdate.cs" />
+    <Compile Include="Zip\AddOrUpdateAction.cs" />
+    <Compile Include="Zip\BadCrcException.cs" />
+    <Compile Include="Zip\BadPasswordException.cs" />
+    <Compile Include="Zip\BadReadException.cs" />
+    <Compile Include="Zip\BadStateException.cs" />
+    <Compile Include="Zip\CountingStream.cs" />
+    <Compile Include="Zip\CRC32.cs" />
+    <Compile Include="Zip\CrcCalculatorStream.cs" />
+    <Compile Include="Zip\CryptoMode.cs" />
+    <Compile Include="Zip\EncryptionAlgorithm.cs" />
+    <Compile Include="Zip\EntrySource.cs" />
+    <Compile Include="Zip\ExtractProgressEventArgs.cs" />
+    <Compile Include="Zip\ReadProgressEventArgs.cs" />
+    <Compile Include="Zip\ReReadApprovalCallback.cs" />
+    <Compile Include="Zip\Resources\CommandLineSelfExtractorStub.cs" />
+    <Compile Include="Zip\Resources\PasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zip\Resources\WinFormsSelfExtractorStub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zip\Resources\ZipContentsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zip\SaveProgressEventArgs.cs" />
+    <Compile Include="Zip\SelfExtractorFlavor.cs" />
+    <Compile Include="Zip\SfxGenerationException.cs" />
+    <Compile Include="Zip\SharedUtilities.cs" />
+    <Compile Include="Zip\Util.cs" />
+    <Compile Include="Zip\WantCompressionCallback.cs" />
+    <Compile Include="Zip\WinZipAesCipherStream.cs" />
+    <Compile Include="Zip\WinZipAesCrypto.cs" />
+    <Compile Include="Zip\Zip64Option.cs" />
+    <Compile Include="Zip\ZipCipherStream.cs" />
+    <Compile Include="Zip\ZipConstants.cs" />
+    <Compile Include="Zip\ZipCrypto.cs" />
+    <Compile Include="Zip\ZipEntry.cs" />
+    <Compile Include="Zip\ZipException.cs" />
+    <Compile Include="Zip\ZipFile.cs" />
+    <Compile Include="Zip\ZipProgressEventArgs.cs" />
+    <Compile Include="Zip\ZipProgressEventType.cs" />
+    <Compile Include="Zlib\Adler.cs" />
+    <Compile Include="Zlib\CompressionLevel.cs" />
+    <Compile Include="Zlib\CompressionMode.cs" />
+    <Compile Include="Zlib\CompressionStrategy.cs" />
+    <Compile Include="Zlib\DeflateManager.cs" />
+    <Compile Include="Zlib\DeflateStream.cs" />
+    <Compile Include="Zlib\InflateBlocks.cs" />
+    <Compile Include="Zlib\InflateCodes.cs" />
+    <Compile Include="Zlib\InflateManager.cs" />
+    <Compile Include="Zlib\InfTree.cs" />
+    <Compile Include="Zlib\SharedUtils.cs" />
+    <Compile Include="Zlib\StaticTree.cs" />
+    <Compile Include="Zlib\Tree.cs" />
+    <Compile Include="Zlib\ZlibBaseStream.cs" />
+    <Compile Include="Zlib\ZlibCodec.cs" />
+    <Compile Include="Zlib\ZlibConstants.cs" />
+    <Compile Include="Zlib\ZlibException.cs" />
+    <Compile Include="Zlib\ZlibStream.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CustomControls\Updater.resx">
       <DependentUpon>Updater.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Zip\Resources\PasswordDialog.resx">
+      <DependentUpon>PasswordDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zip\Resources\WinFormsSelfExtractorStub.resx">
+      <DependentUpon>WinFormsSelfExtractorStub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zip\Resources\ZipContentsDialog.resx">
+      <DependentUpon>ZipContentsDialog.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SequentalDownload\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
