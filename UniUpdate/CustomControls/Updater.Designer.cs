@@ -1,6 +1,6 @@
 ﻿namespace UniUpdate.CustomControls
 {
-    partial class frmDownload
+    partial class Updater
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -68,7 +68,7 @@
             this.lblFileProgress.Name = "lblFileProgress";
             this.lblFileProgress.Size = new System.Drawing.Size(775, 20);
             this.lblFileProgress.TabIndex = 3;
-            this.lblFileProgress.Text = "https://www.blueboxproduction.ru/";
+            this.lblFileProgress.Text = "https://www.site.ru/download/s/100_103.patch";
             // 
             // frmDownload
             // 
@@ -79,16 +79,15 @@
             this.Controls.Add(this.lblSize);
             this.Controls.Add(this.prBar);
             this.Name = "frmDownload";
-            this.Size = new System.Drawing.Size(820, 49);
+            this.Size = new System.Drawing.Size(820, 50);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ProgressBar prBar;
         private TransparentLabel lblSize;
         private System.Windows.Forms.Label lblPersentage;
         private System.Windows.Forms.Label lblFileProgress;
+        internal System.Windows.Forms.ProgressBar prBar;
     }
 }

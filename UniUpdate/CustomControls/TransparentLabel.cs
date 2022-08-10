@@ -13,8 +13,8 @@ namespace UniUpdate.CustomControls
     {
         public TransparentLabel()
         {
-            this.transparentBackColor = Color.Blue;
-            this.opacity = 50;
+            this.transparentBackColor = Color.Green;
+            this.opacity = 0;
             this.BackColor = Color.Transparent;
         }
         protected override void OnPaint(PaintEventArgs e)
