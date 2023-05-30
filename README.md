@@ -63,11 +63,11 @@ updater.TopMostWindow = true;
  
 #region Если не нужно отдельного окна, а можно воспользоваться UserControl
  
-if (!checkBox1.Checked)
+if (!checkBox_Window.Checked)
     flowLayoutPanel1.Controls.Add(updater);
 #endregion
  
-updater.Start(onearg, chbWnd.Checked);
+updater.Start(onearg, checkBox_Window.Checked);
  
 //Пример со считывание параметров
 OneUpdate oneUpdate = new OneUpdate();
