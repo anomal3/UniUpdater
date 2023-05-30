@@ -81,11 +81,12 @@ oneUpdate.DownloadFile("http://SITEUPDATION.ru/update/update.zip", Environment.C
 ```
 
 <details>
-  <summary>Example</summary>
+  <summary> немного скринов результата </summary>
 
-  ```
-  long console output here
-  ```
-</details>
-Результат
 ![Result!](exmpl1.png "Results")
+ 
+ ![Result!](exmpl2.png "Results")
+ 
+ ![Result!](exmpl3.png "Results")
+</details>
+
