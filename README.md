@@ -63,7 +63,7 @@ updater.TopMostWindow = true;
  
 #region Если не нужно отдельного окна, а можно воспользоваться UserControl
  
-if (!chbWnd.Checked)
+if (!checkBox1.Checked)
     flowLayoutPanel1.Controls.Add(updater);
 #endregion
  
