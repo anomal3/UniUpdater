@@ -80,5 +80,12 @@ oneUpdate.lblUpdate = lblUpdate;
 oneUpdate.DownloadFile("http://SITEUPDATION.ru/update/update.zip", Environment.CurrentDirectory + "\\update.zip");
 ```
 
+<details>
+  <summary>Example</summary>
 
+  ```
+  long console output here
+  ```
+</details>
+Результат
 ![Result!](exmpl1.png "Results")
