@@ -81,4 +81,4 @@ oneUpdate.DownloadFile("http://SITEUPDATION.ru/update/update.zip", Environment.C
 ```
 
 
-![Result!](CompanyFileManager/src/IIS.png "Results")
+![Result!](exmpl1.png "Results")
